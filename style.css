@@ -4,12 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-@media screen and (max-width: 768px) {
-    body {
-        
-        margin: 0; /* Avoids unnecessary space */
-    }
-}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -398,6 +393,7 @@ body {
 
 
 }
+
 .more-button .arrow {
     font-size: 90px; /* Adjust the size as needed */
     height: 400px;
@@ -439,7 +435,7 @@ body {
 }
 
 .slide {
-    display: none;
+
     width: 100%;
     transition: opacity 0.5s ease-in-out;
     position: relative;  /* Added for positioning the slide content */
@@ -792,7 +788,14 @@ body {
     justify-content: flex-start; /* Align content to the left */
     padding: 100px;
 
+
 }
+@media (max-width: 768px) {
+    .header-1{
+        padding: 40px; /* Reduced padding for smaller screens */
+    }
+}
+
 .invo{
     font-size: 24px;
     font-weight: normal;
@@ -914,8 +917,5 @@ footer {
     margin: 0;
     color: white;
 }
-@media (max-width: 768px) {
-    .invo-1{
-        margin-left: 300px;
-    }
-}
+
+
