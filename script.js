@@ -1,29 +1,28 @@
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+// Navbar Toggle for Mobile
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Carousel Functionality
+const slides = document.querySelectorAll('.carousel-item');
 let currentSlide = 0;
 
-function showSlide(n) {
-    slides.forEach((slide, index) => {
+function showSlide(index) {
+    slides.forEach((slide, i) => {
         slide.classList.remove('active');
-        if (index === n) {
+        if (i === index) {
             slide.classList.add('active');
         }
     });
 }
 
-prevBtn.addEventListener('click', () => {
-    showSlide((currentSlide - 1 + slides.length) % slides.length);
-});
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
 
-nextBtn.addEventListener('click', () => {
-    showSlide((currentSlide + 1) % slides.length);
-});
+setInterval(nextSlide, 3000);
 
-// Automatic slide transition
-setInterval(() => {
-    showSlide((currentSlide + 1) % slides.length);
-}, 3000);
-// Adjust the interval time as needed
-
-showSlide(currentSlide); // Show the initial slide
